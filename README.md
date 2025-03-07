@@ -37,6 +37,8 @@ STEP 5:Normalizing the data<BR>
 STEP 6:Splitting the data into test and train<BR>
 
 ##  PROGRAM:
+
+### DATASET:
 ```
 import pandas as pd                                                 
 import io
@@ -46,14 +48,15 @@ from sklearn.model_selection import train_test_split
 df=pd.read_csv("Churn_Modelling.csv",index_col="RowNumber")         
 df.head()
 ```
-
+### NULL VALUES:
 ```
 df.isnull().sum()
 ```
-
+### NO.OF DUPLICATE ROWS
 ```
 df.duplicated().sum()
 ```
+### NORMALIZED DATA:
 
 ```
 df=df.drop(['Surname', 'Geography','Gender'], axis=1)               
@@ -61,10 +64,13 @@ scaler=StandardScaler()
 df=pd.DataFrame(scaler.fit_transform(df))
 df.head()
 ```
-
+### SPLITTING DATA:
 ```
 X,Y=df.iloc[:,:-1].values ,df.iloc[:,-1].values                    
-print('Input:\n',X,'\nOutput:\n',Y) 
+print('Input:\n',X,'\nOutput:\n',Y)
+```
+### TRAIN AND TEST DATA:
+```
 Xtrain,Xtest,Ytrain,Ytest = train_test_split(X, Y, test_size=0.2)   
 print("Xtrain:\n" ,Xtrain, "\nXtest:\n", Xtest)                    
 print("\nYtrain:\n" ,Ytrain, "\nYtest:\n", Ytest)      
