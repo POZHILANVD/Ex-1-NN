@@ -80,7 +80,7 @@ print("\nYtrain:\n" ,Ytrain, "\nYtest:\n", Ytest)
 ### NORMALIZED DATA:
 ![image](https://github.com/user-attachments/assets/d0a09663-84a2-4782-925d-9a05cfea9691)
 
-### DATA SPLITTING:
+### SPLITTING DATA:
 ![image](https://github.com/user-attachments/assets/681befba-037d-4e2a-b462-4c7ac5d8fdc1)
 
 ### TRAIN AND TEST DATA:
